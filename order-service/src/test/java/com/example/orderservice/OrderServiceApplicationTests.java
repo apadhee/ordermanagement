@@ -11,8 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.example.orderservice.controller.OrdersController;
-import com.example.orderservice.entity.Orders;
-import com.example.orderservice.service.OrdersService;
+import com.example.orderservice.dto.Orders;
+import com.example.orderservice.service.OrdersServiceImpl;
 
 @SpringBootTest
 class OrderServiceApplicationTests {
@@ -21,7 +21,7 @@ class OrderServiceApplicationTests {
 	OrdersController ordersController;
 
 	@InjectMocks
-	OrdersService orderService;
+	OrdersServiceImpl orderService;
 	
 	@Test
 	public void testRetrieveOrders() {

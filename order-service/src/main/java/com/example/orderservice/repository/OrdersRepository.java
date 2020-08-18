@@ -7,7 +7,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.orderservice.entity.Orders;
+import com.example.orderservice.dto.Orders;
 import com.example.orderservice.exception.OrderNotFoundException;
 import com.example.orderservice.mapper.OrdersMapper;
 
@@ -36,6 +36,17 @@ public class OrdersRepository {
 					new Object[] { customerName }, new OrdersMapper());
 		} catch (EmptyResultDataAccessException erda) {
 			throw new OrderNotFoundException("Customer record not present");
+		}
+		return order;
+	}
+	
+	public Orders retrieveOrder(Integer orderId) {
+		Orders order = null;
+		try {
+			order = jdbcTemplate.queryForObject("select * from orders where orderId = ?",
+					new Object[] { orderId }, new OrdersMapper());
+		} catch (EmptyResultDataAccessException erda) {
+			throw new OrderNotFoundException("Order not present");
 		}
 		return order;
 	}
