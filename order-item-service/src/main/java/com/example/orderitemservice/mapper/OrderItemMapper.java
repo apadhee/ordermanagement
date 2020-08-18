@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.example.orderitemservice.entity.OrderItem;
+import com.example.orderitemservice.dto.OrderItem;
 
 
 public class OrderItemMapper implements RowMapper<OrderItem>{

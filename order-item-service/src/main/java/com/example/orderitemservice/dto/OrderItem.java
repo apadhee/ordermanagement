@@ -1,4 +1,4 @@
-package com.example.orderitemservice.entity;
+package com.example.orderitemservice.dto;
 
 public class OrderItem {
 

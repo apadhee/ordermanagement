@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.orderitemservice.entity.OrderItem;
+import com.example.orderitemservice.dto.OrderItem;
 import com.example.orderitemservice.mapper.OrderItemMapper;
 
 @Repository

@@ -3,22 +3,22 @@ package com.example.orderitemservice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.orderitemservice.entity.OrderItem;
-import com.example.orderitemservice.entity.Orders;
-import com.example.orderitemservice.service.OrderItemService;
+import com.example.orderitemservice.dto.OrderItem;
+import com.example.orderitemservice.dto.Orders;
+import com.example.orderitemservice.proxy.OrderControllerProxy;
+import com.example.orderitemservice.service.OrderItemServiceImpl;
 
 @RestController
 public class OrderItemController {
 
 	@Autowired
-	private OrderItemService orderItemService;
+	private OrderItemServiceImpl orderItemService;
 	
 	@Autowired
 	private OrderControllerProxy orderControllerProxy;
