@@ -15,28 +15,25 @@ import com.example.orderservice.service.OrdersServiceImpl;
 
 @RestController
 public class OrdersController {
-	
+
 	@Autowired
 	private OrdersServiceImpl ordersService;
-	
+
 	@GetMapping("/orders")
 	public List<Orders> retrieveOrders() {
 		return ordersService.retrieveOrders();
 	}
-	
+
 	@PostMapping("/order")
 	public Orders createOrder(@Validated @RequestBody Orders order) {
 		return ordersService.createOrder(order);
 	}
-	
+
 	@GetMapping("/orders/{customer}")
 	public Orders retrieveOrderInfo(@PathVariable("customer") String customerName) {
 		return ordersService.retrieveOrderInfo(customerName);
 	}
-	
-	/**
-	 * REST Endpoint for getting Order by Id
-	 */
+
 	@GetMapping("/orders/{id}")
 	public Orders retrieveOrderInfo(@PathVariable("id") Integer id) {
 		return ordersService.retrieveOrder(id);

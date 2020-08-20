@@ -1,7 +1,6 @@
 package com.example.orderservice.advice;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -19,7 +18,6 @@ import com.example.orderservice.exception.OrderNotFoundException;
 @ControllerAdvice
 public class ControllerAdvisor extends ResponseEntityExceptionHandler {
 
-	// 2. Global Exception Handler for exceptions
 	@ExceptionHandler(OrderNotFoundException.class)
 	public ResponseEntity<Object> handleOrderNotFoundException(OrderNotFoundException ex, WebRequest request) {
 

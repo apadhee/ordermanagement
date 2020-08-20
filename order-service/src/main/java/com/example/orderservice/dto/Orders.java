@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Orders {
-	// Validation of I/P params
 	@NotNull
 	@Size(min = 2, message = "Customer name is mandatory")
 	private String customerName;
@@ -18,7 +17,6 @@ public class Orders {
 	private String shippingAddress;
 	private List<OrderItem> orderItems;
 	private Integer total;
-	//Introduction of new field as it was not mentioned in the doc
 	private Integer id;
 	public String getCustomerName() {
 		return customerName;
